@@ -1,0 +1,829 @@
+# Select
+
+## Usage
+
+import { Select } from "../../components/select";
+import { Tabs } from "nextra/components";
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3">
+<Select
+  
+  placeholder="- Select -"
+  mode="single"
+  options={[ 
+    {
+      key: "1",
+      label: "apple",
+    },
+    {
+      key: "2",
+      label: "orange",
+    },
+    {
+      key: "3",
+      label: "strawberry",
+    },
+    {
+      key: "4",
+      label: "grape",
+    },
+    {
+      key: "5",
+      label: "tomato",
+    },
+    {
+    key: "6",
+    label: "kiwi",
+  },]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select placeholder="- Select -" mode="single" options={options} />
+
+````
+  </Tabs.Tab>
+</Tabs>
+
+
+## Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3">
+<Select
+  placeholder="- Select -"
+  disabled
+  mode="single"
+  options={[
+    {
+      key: "1",
+      label: "apple",
+    },
+    {
+      key: "2",
+      label: "orange",
+    },
+    {
+      key: "3",
+      label: "strawberry",
+    },
+    {
+      key: "4",
+      label: "grape",
+    },
+    {
+      key: "5",
+      label: "tomato",
+    },
+    {
+    key: "6",
+    label: "kiwi",
+  },]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select placeholder="- Select -" mode="single" disabled options={options} />
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Disabled Items
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3">
+<Select
+
+placeholder="- Select -"
+disabledKeys={["1", "4"]}
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="- Select -"
+  mode="single"
+  disabledKeys={["1", "4"]}
+  options={options}
+/>
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Readonly (display or view only)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3">
+<Select
+
+placeholder="- Select -"
+readonly
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="- Select -"
+  mode="single"
+  readonly
+  options={options}
+/>
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Variants
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="available variant"
+variant="available"
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+<Select
+placeholder="default variant"
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="available variant"
+  variant="available"
+  mode="single"
+  options={options}
+/>
+
+<Select placeholder="default variant" mode="single" options={options} />
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Error state
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="placeholder"
+error={true}
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="placeholder"
+  error={true}
+  mode="single"
+  options={options}
+/>
+
+
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Sizes
+
+The default size is large, if no size property is provided.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="placeholder"
+size="small"
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+<Select
+placeholder="placeholder"
+size="large"
+mode="single"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="placeholder"
+  size="small"
+  mode="single"
+  options={options}
+/>
+
+<Select
+  placeholder="placeholder"
+  size="large"
+  mode="single"
+  options={options}
+/>
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+
+## Multiple Select
+
+Enabling multiple selection is as simple as changing the mode to multiple.
+This will enable the list with checkboxes and allows the user to select multiple options.
+
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="placeholder"
+mode="multiple"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+const options = [
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},
+];
+
+<Select
+  placeholder="placeholder"
+  mode="multiple"
+  options={options}
+/>
+
+
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Default Selected Values
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="placeholder"
+mode="multiple"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+<Select placeholder="placeholder" mode="multiple" options={options} />
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+## Using with react-hook-form and Zod
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <div className=" grid grid-cols-3 gap-4">
+<Select
+placeholder="placeholder"
+mode="multiple"
+options={[
+{
+key: "1",
+label: "apple",
+},
+{
+key: "2",
+label: "orange",
+},
+{
+key: "3",
+label: "strawberry",
+},
+{
+key: "4",
+label: "grape",
+},
+{
+key: "5",
+label: "tomato",
+},
+{
+key: "6",
+label: "kiwi",
+},]}
+
+/>
+
+</div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+   ```js filename="app.js" {3} copy
+
+<Select placeholder="placeholder" mode="multiple" options={options} />
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+```
+
+```
