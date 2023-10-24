@@ -31,7 +31,7 @@ const CheckBoxIndicator = ({ className }: { className?: string }) => {
           ` peer ${
             isFocused &&
             " bg-blue-interaction-200 opacity-70 h-7 w-7 border-blue-interaction-200 "
-          } relative h-5 w-5 cursor-pointer appearance-none rounded-md  border border-primary transition-all duration-700 before:absolute before:top-2/4 before:left-2/4 before:block before:h-7 before:w-7 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:disabled:bg-coolGray-400  before:bg-blue-interaction-200 before:disabled:bg-transparent hover:before:opacity-50 disabled:border-coolGray-400 disabled:cursor-not-allowed`,
+          } relative h-5 w-5 cursor-pointer appearance-none rounded-md  border border-primary transition-all duration-700 before:absolute before:top-2/4 before:left-2/4 before:block before:h-7 before:w-7 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:disabled:bg-gray-400  before:bg-blue-interaction-200 before:disabled:bg-transparent hover:before:opacity-50 disabled:border-gray-400 disabled:cursor-not-allowed`,
           className
         )}
         //@ts-ignore
@@ -41,7 +41,7 @@ const CheckBoxIndicator = ({ className }: { className?: string }) => {
         //@ts-ignore
         onChange={onChange}
       />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white-50">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

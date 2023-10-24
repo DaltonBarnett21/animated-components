@@ -46,7 +46,7 @@ export function createListBox({
 
     return (
       <li
-        className={` ${isFocused && " bg-coolGray-300"} `}
+        className={` ${isFocused && " bg-gray-300"} `}
         {...option.optionProps}
         ref={ref}
       >
@@ -61,7 +61,7 @@ export function createListBox({
           <div
             className={`flex p-1 items-center justify-between  ${
               option.isDisabled
-                ? "hover:bg-white"
+                ? "hover:bg-white-50"
                 : "hover:bg-blue-interaction-100"
             } transition-all cursor-pointer  `}
           >
@@ -69,7 +69,7 @@ export function createListBox({
               state.selectionManager.selectionMode === "single" && (
                 <span
                   className={`${
-                    option.isDisabled && "text-coolGray-400 cursor-not-allowed"
+                    option.isDisabled && "text-gray-400 cursor-not-allowed"
                   }`}
                 >
                   {item.rendered}
@@ -111,8 +111,8 @@ export function createListBox({
 
     return (
       <li
-        className={`pb-2 mb-2  border-b border-coolGray-400 ${
-          isFocused && " bg-coolGray-300"
+        className={`pb-2 mb-2  border-b border-gray-400 ${
+          isFocused && " bg-gray-300"
         }`}
         {...option.optionProps}
         ref={ref}

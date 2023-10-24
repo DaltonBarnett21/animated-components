@@ -276,7 +276,7 @@ const SearchableSelect = (props: SearchableSelectProps) => {
                 aria-hidden="true"
               >
                 {disabled || readonly ? (
-                  <DownArrow className={" fill-coolGray-500"} />
+                  <DownArrow className={" fill-gray-500"} />
                 ) : (
                   <DownArrow />
                 )}
@@ -285,7 +285,7 @@ const SearchableSelect = (props: SearchableSelectProps) => {
           )}
         </InputBase>
       </div>
-      <span className=" text-coolGray-500">{props.description}</span>
+      <span className=" text-gray-500">{props.description}</span>
       <AnimatePresence>
         {triggerState.isOpen && (
           <Popover
@@ -345,7 +345,7 @@ const Popover = forwardRef<HTMLDivElement, PopoverProps>(
     return (
       <FocusScope restoreFocus>
         <motion.div
-          className=" border border-coolGray-400 z-50 absolute w-[100%] top-[4.3rem]  rounded-md bg-white"
+          className=" border border-gray-400 z-50 absolute w-[100%] top-[4.3rem]  rounded-md bg-white-50"
           initial={ANIMATIONS.scaleSpringOpacity.exit}
           animate={ANIMATIONS.scaleSpringOpacity.enter}
           exit={ANIMATIONS.scaleSpringOpacity.exit}

@@ -83,7 +83,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
           )}
           {icon && icon}
         </InputBase>
-        <span className=" text-coolGray-500">{description}</span>
+        <span className=" text-gray-500">{description}</span>
       </>
     );
   }

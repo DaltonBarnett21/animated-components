@@ -19,6 +19,7 @@ import { Input } from "@/components/input";
 import { ListFilter } from "lucide-react";
 import { Popover, PopoverTrigger, Tester } from "@/components/popover";
 import { PopoverContent } from "@radix-ui/react-popover";
+import { Button } from "@/components/button";
 
 const options = [
   {
@@ -84,6 +85,7 @@ const Test = () => {
         });
       }
     }),
+
     textInput: z.string(),
     numberInput: z.number().nullable(),
   });
@@ -189,8 +191,16 @@ const Test = () => {
                       mode="range"
                       error={form.formState.errors.dateRange ? true : false}
                       onChange={(val: any) => {
-                        const start = `${val.start.month}/${val.start.day}/${val.start.year}`;
-                        const end = `${val.end.month}/${val.end.day}/${val.end.year}`;
+                        let start;
+                        let end;
+
+                        if (!val?.start?.year || !val?.end?.year) {
+                          end = "";
+                          start = "";
+                        } else {
+                          start = `${val.start.month}/${val.start.day}/${val.start.year}`;
+                          end = `${val.end.month}/${val.end.day}/${val.end.year}`;
+                        }
 
                         field.onChange({ start: start, end: end });
                       }}
@@ -213,8 +223,15 @@ const Test = () => {
                       minValue={today(getLocalTimeZone())}
                       error={form.formState.errors.dateSingle ? true : false}
                       mode="single"
+                      dateValue={field.value}
                       onChange={(val: any) => {
-                        const date = `${val.month}/${val.day}/${val.year}`;
+                        let date;
+
+                        if (!val?.year) {
+                          date = "";
+                        } else {
+                          date = `${val?.month}/${val?.day}/${val?.year}`;
+                        }
 
                         field.onChange(date);
                       }}
@@ -269,16 +286,13 @@ const Test = () => {
                 </FormItem>
               )}
             />
-            <Popover>
-              <PopoverTrigger>open</PopoverTrigger>
-              <PopoverContent className=" border border-coolGray-400 p-4 w-72">
-                hello from contetn
-              </PopoverContent>
-            </Popover>
 
-            <Tester />
-
-            <button type="submit">Submit</button>
+            <Button
+              disabled={!form.formState.isValid || !form.formState.isDirty}
+              type="submit"
+            >
+              Submit
+            </Button>
           </div>
         </form>
       </Form>

@@ -258,11 +258,11 @@ export function CalendarCell({ state, date, currentMonth }: any) {
           isRoundedLeft ? "rounded-l-md" : ""
         } ${isRoundedRight ? "rounded-r-md" : ""} ${
           isSelected ? "bg-blue-50 " : ""
-        } ${isDisabled ? " text-coolGray-400 cursor-not-allowed" : ""}`}
+        } ${isDisabled ? " text-gray-400 cursor-not-allowed" : ""}`}
       >
         <div
           className={`w-full h-full rounded-md flex items-center justify-center ${
-            isDisabled ? "text-coolGray-400" : ""
+            isDisabled ? "text-gray-400" : ""
           } ${
             // Focus ring, visible while the cell has keyboard focus.
             isFocusVisible
@@ -271,17 +271,17 @@ export function CalendarCell({ state, date, currentMonth }: any) {
           } ${
             // Darker selection background for the start and end.
             isSelectionStart || isSelectionEnd
-              ? "bg-primary text-white hover:bg-primary  "
+              ? "bg-primary text-white-50 hover:bg-primary  "
               : ""
           } ${
             // Hover state for cells in the middle of the range.
             isSelected && !(isSelectionStart || isSelectionEnd)
-              ? "hover:bg-primary "
+              ? "hover:bg-primary text-white-50"
               : ""
           } ${
             // Hover state for non-selected cells.
             !isSelected && !isDisabled
-              ? "hover:bg-primary hover:text-white"
+              ? "hover:bg-primary hover:text-white-50"
               : ""
           } cursor-default`}
         >

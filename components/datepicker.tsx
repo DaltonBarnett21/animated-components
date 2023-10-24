@@ -20,6 +20,7 @@ interface Props extends VariantProps<typeof inputVariants> {
   readonly?: boolean;
   disabled?: boolean;
   onChange?: any;
+  dateValue?: string;
 }
 
 export function DatePicker(props: Props) {
@@ -66,14 +67,14 @@ function Single(props: Props) {
             isPressed={state.isOpen}
           >
             {isDisabled ? (
-              <CalendarIcon className="w-5 h-5 text-coolGray-400 group-focus-within:text-coolGray-400" />
+              <CalendarIcon className="w-5 h-5 text-gray-400 group-focus-within:text-gray-400" />
             ) : (
               <CalendarIcon className="w-5 h-5 text-primary group-focus-within:text-primary" />
             )}
           </FieldButton>
         </InputBase>
       </div>
-      <span className=" text-coolGray-500">{props.description}</span>
+      <span className=" text-gray-500">{props.description}</span>
       <AnimatePresence>
         {state.isOpen && !isDisabled && (
           <Popover triggerRef={ref} state={state}>
@@ -128,14 +129,14 @@ function Range(props: Props) {
             isPressed={state.isOpen}
           >
             {isDisabled ? (
-              <CalendarIcon className="w-5 h-5 text-coolGray-400 group-focus-within:text-coolGray-400" />
+              <CalendarIcon className="w-5 h-5 text-gray-400 group-focus-within:text-gray-400" />
             ) : (
               <CalendarIcon className="w-5 h-5 text-primary group-focus-within:text-primary" />
             )}
           </FieldButton>
         </InputBase>
       </div>
-      <span className=" text-coolGray-500">{props.description}</span>
+      <span className=" text-gray-500">{props.description}</span>
       <AnimatePresence>
         {state.isOpen && !isDisabled && (
           <Popover triggerRef={ref} state={state}>
@@ -191,7 +192,7 @@ function Popover(props: any) {
       <div
         {...popoverProps}
         ref={ref}
-        className="absolute  -translate-x-3  bg-white border border-coolGray-400 rounded-md  top-[4.5rem] p-5 z-50"
+        className="absolute  -translate-x-3  bg-white-50 border border-gray-400 rounded-md  top-[4.5rem] p-5 z-50"
       >
         <DismissButton onDismiss={state.close} />
         {children}
