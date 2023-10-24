@@ -17,7 +17,7 @@ import {
 import { Select } from "@/components/select";
 import { Input } from "@/components/input";
 import { ListFilter } from "lucide-react";
-import { Popover, PopoverTrigger } from "@/components/popover";
+import { Popover, PopoverTrigger, Tester } from "@/components/popover";
 import { PopoverContent } from "@radix-ui/react-popover";
 
 const options = [
@@ -272,9 +272,11 @@ const Test = () => {
             <Popover>
               <PopoverTrigger>open</PopoverTrigger>
               <PopoverContent className=" border border-coolGray-400 p-4 w-72">
-                hi
+                hello from contetn
               </PopoverContent>
             </Popover>
+
+            <Tester />
 
             <button type="submit">Submit</button>
           </div>

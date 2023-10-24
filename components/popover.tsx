@@ -8,11 +8,11 @@ import { AnimatePresence, motion } from "framer-motion";
 const popoverOpenContext = React.createContext<boolean>(false);
 
 function Popover({ children, ...props }: PopoverPrimitive.PopoverProps) {
-  const [isOpen, setOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <popoverOpenContext.Provider value={isOpen}>
-      <PopoverPrimitive.Root onOpenChange={setOpen} {...props}>
+      <PopoverPrimitive.Root open={isOpen} onOpenChange={setIsOpen} {...props}>
         {children}
       </PopoverPrimitive.Root>
     </popoverOpenContext.Provider>
@@ -21,7 +21,7 @@ function Popover({ children, ...props }: PopoverPrimitive.PopoverProps) {
 
 const PopoverTrigger = PopoverPrimitive.Trigger;
 
-function PopoverContentCore(
+function PopoverContent(
   { children, className, ...props }: PopoverPrimitive.PopoverContentProps,
   forwardedRef: React.ForwardedRef<HTMLDivElement>
 ) {
@@ -30,28 +30,56 @@ function PopoverContentCore(
   return (
     <AnimatePresence>
       {isOpen && (
-        <PopoverPrimitive.Portal forceMount>
-          <PopoverPrimitive.PopoverContent
-            ref={forwardedRef}
-            forceMount
-            asChild
-            className={cn("", className)}
-            {...props}
+        <PopoverPrimitive.Content
+          ref={forwardedRef}
+          forceMount
+          asChild
+          className={cn("", className)}
+          {...props}
+        >
+          <motion.div
+            initial={ANIMATIONS.scaleSpringOpacity.exit}
+            animate={ANIMATIONS.scaleSpringOpacity.enter}
+            exit={ANIMATIONS.scaleSpringOpacity.exit}
           >
-            <motion.div
-              initial={ANIMATIONS.scaleSpringOpacity.exit}
-              animate={ANIMATIONS.scaleSpringOpacity.enter}
-              exit={ANIMATIONS.scaleSpringOpacity.exit}
-            >
-              HELLO
-            </motion.div>
-          </PopoverPrimitive.PopoverContent>
-        </PopoverPrimitive.Portal>
+            {children}
+          </motion.div>
+        </PopoverPrimitive.Content>
       )}
     </AnimatePresence>
   );
 }
 
-const PopoverContent = React.forwardRef(PopoverContentCore);
+const Tester = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div className="App">
+      <PopoverPrimitive.Root
+        open={isOpen}
+        onOpenChange={(open) => setIsOpen(open)}
+      >
+        <PopoverPrimitive.Trigger className="trigger">
+          Trigger
+        </PopoverPrimitive.Trigger>
+        <AnimatePresence>
+          {isOpen && (
+            <PopoverPrimitive.Content forceMount asChild>
+              <motion.div
+                initial={ANIMATIONS.scaleSpringOpacity.exit}
+                animate={ANIMATIONS.scaleSpringOpacity.enter}
+                exit={ANIMATIONS.scaleSpringOpacity.exit}
+              >
+                <h3>Popover content</h3>
+                <p>Are you sure you wanna do this?</p>
+                <PopoverPrimitive.Close>X</PopoverPrimitive.Close>
+                <PopoverPrimitive.Arrow className="arrow" />
+              </motion.div>
+            </PopoverPrimitive.Content>
+          )}
+        </AnimatePresence>
+      </PopoverPrimitive.Root>
+    </div>
+  );
+};
 
-export { Popover, PopoverTrigger, PopoverContent };
+export { Popover, PopoverTrigger, PopoverContent, Tester };
